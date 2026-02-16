@@ -3,7 +3,9 @@ package com.example.service;
 import com.example.model.Cart;
 import com.example.repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CartService {
     @Autowired
     private CartRepository cartRepository;
@@ -12,7 +14,7 @@ public class CartService {
         return cartRepository.save(cart);
     }
 
-    public Cart getCartById(Long id){
-        return cartRepository.findById(id).orElse(null);
+    public Cart getCartByUserId(Long id){
+        return cartRepository.findByUser_Id(id);
     }
 }

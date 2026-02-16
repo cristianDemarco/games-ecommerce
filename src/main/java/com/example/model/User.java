@@ -1,5 +1,6 @@
 package com.example.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -30,7 +31,8 @@ public class User {
     @NotNull
     private String password;
 
-    @OneToOne(mappedBy = "user", optional = false)
+    @JsonManagedReference
+    @OneToOne(cascade= CascadeType.ALL, mappedBy = "user", optional = false)
     @NotNull
     private Cart cart;
 }
