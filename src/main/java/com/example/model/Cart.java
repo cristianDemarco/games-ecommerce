@@ -1,4 +1,4 @@
-package com.example.models;
+package com.example.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -19,9 +19,9 @@ import java.util.Set;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @OneToOne(optional = false)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @NotNull
     private User user;

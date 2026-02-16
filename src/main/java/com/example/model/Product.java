@@ -1,4 +1,4 @@
-package com.example.models;
+package com.example.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,20 +22,20 @@ import java.util.Set;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column
-    @Size(max = 150)
+    @Size(max = 100)
     @NotNull
     private String name;
 
     @Column
-    @Size(max = 150)
+    @Size(max = 200)
     private String description;
 
     @Column
     @PositiveOrZero
-    private float price;
+    private BigDecimal price;
 
     @ManyToMany(mappedBy = "products")
     private Set<Cart> carts = new HashSet<>();

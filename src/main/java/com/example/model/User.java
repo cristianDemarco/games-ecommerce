@@ -1,4 +1,4 @@
-package com.example.models;
+package com.example.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -18,7 +18,7 @@ import jakarta.validation.constraints.Size;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column
     @Size(min=3, max=50)
