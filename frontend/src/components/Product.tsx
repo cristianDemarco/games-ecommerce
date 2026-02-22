@@ -9,7 +9,7 @@ const Product = ({product}: ProductProps) => {
     const [image, setImage] = useState<string | undefined>();
     
         useEffect(() => {
-                fetch(`/products/${product.id}/image`)
+                fetch(`api/products/${product.id}/image`)
                     .then(response => response.blob())
                     .then(blob => setImage(URL.createObjectURL(blob)))
                     .catch((err) => {

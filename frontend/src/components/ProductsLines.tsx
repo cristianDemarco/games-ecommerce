@@ -4,7 +4,7 @@ const ProductsLines = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-            fetch("/products?page=0&limit=9")
+            fetch("api/products?page=0&limit=9")
                 .then(response => response.json())
                 .then(setProducts)
                 .catch((err) => {
