@@ -3,7 +3,7 @@ import ProductsLines from '../components/ProductsLines';
 
 function HomePage(){
     const [page, setPageNum] = useState(0);
-    const [hasMore, setHasMore] = useState(true);
+    const [hasMore, setHasMore] = useState(false);
 
     const handleHasMore = (data: boolean)=>{
         setHasMore(data);

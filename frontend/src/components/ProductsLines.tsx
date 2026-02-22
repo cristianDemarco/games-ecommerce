@@ -31,7 +31,10 @@ const ProductsLines = ({page, setHasMore}: {page: number, setHasMore: (data: boo
             </div>
         );
     } else {
-        return (<div className="text-center">There are no products to display</div>)
+        return (
+        <div className="row text-center my-5">
+                <h3>There are no products available</h3>
+        </div>)
     }
 }
 export default ProductsLines;
