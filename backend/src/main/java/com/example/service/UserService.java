@@ -12,6 +12,9 @@ public class UserService {
     private UserRepository userRepository;
 
     public User saveUserWithCart(User user){
+        if(userRepository.existsByEmail(user.getEmail())){
+            throw new RuntimeException("User with this email already exists");
+        }
         Cart cart = new Cart();
 
         cart.setUser(user);

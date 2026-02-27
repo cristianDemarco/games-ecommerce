@@ -2,6 +2,7 @@ package com.example.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,6 +26,12 @@ public class User {
     @Size(min=3, max=50)
     @NotNull
     private String name;
+
+    @Column(unique = true)
+    @Size(min=3, max=50)
+    @Email
+    @NotNull
+    private String email;
 
     @Column
     @Size(min=3, max=50)
